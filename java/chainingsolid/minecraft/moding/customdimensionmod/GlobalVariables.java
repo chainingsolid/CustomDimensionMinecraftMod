@@ -1,4 +1,4 @@
-package chainigsolid.minecraft.moding.customdimensionmod;
+package chainingsolid.minecraft.moding.customdimensionmod;
 
 public class GlobalVariables {
 	
@@ -8,3 +8,9 @@ public class GlobalVariables {
 	
 	
 }
+
+
+
+
+
+
