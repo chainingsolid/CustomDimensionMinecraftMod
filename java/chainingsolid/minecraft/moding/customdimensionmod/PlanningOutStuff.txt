@@ -1,0 +1,67 @@
+Planning out stuff
+	
+	"spread region" = a set of "influence nodes"(on a grid) that spread out from a central one randomly, and get weeker as they go out, and winners in over laps are solved by whos stronger
+	
+	
+	
+	
+	
+	
+	
+	Stages
+		
+		1) gen transport "spread regions"
+			water, land and both(water and land transport)
+			1.1 gen the regions
+			1.2 insure all land and all water is connected
+				done by pathing between "spread regions" of the same type with slight priorty given to pathing thru the same region type
+			1.2.1 water paths to water and "both" with rivers
+				land paths to land and both with "both"
+			
+		2) gen terrain types
+			2.1 gen terrain "spread regions"
+				the starter node's terrain type is based on the type of transport region its on
+			
+		3) gen biome/foilage types
+			3.1 gen foilage "spread regions"
+				also based on the starter node's terrain type
+		
+		4) gen over view cave maps
+			4.1 gen cave regions
+			4.2 do the connect regions by pathing between them trick
+		
+		5) gen over view path map
+			5.1 place points randomly on the map and path between em'
+				master path points always path to any close master points (insures connectivty)
+				lesser points always path to a master point, and path randomly to any other points
+		
+		6) plan structure locations
+			6.1 pick a structure based on terrain type foilage type and maybe some other stuff
+			6.2 do what ever other planning the picked sturcture requires
+		
+		7) end planning phaze
+			
+			
+		8) gen terrain
+			
+		9) gen caves
+			
+		10) gen stuctures
+			
+		11) gen paths
+			
+		12) gen foilage
+			
+		
+		
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

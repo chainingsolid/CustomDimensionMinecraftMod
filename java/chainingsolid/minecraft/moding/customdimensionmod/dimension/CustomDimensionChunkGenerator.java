@@ -2,6 +2,7 @@ package chainingsolid.minecraft.moding.customdimensionmod.dimension;
 
 import java.util.List;
 
+import chainingsolid.minecraft.moding.customdimensionmod.dimension.stagesystem.GenerationStagePipeline;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -10,11 +11,20 @@ import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.gen.IChunkGenerator;
 
 public class CustomDimensionChunkGenerator implements IChunkGenerator {
-
+	
+	CustomDimensionWorldProvider worldProvider;
+	World world;
+	GenerationStagePipeline pipeline;
+	
+	public CustomDimensionChunkGenerator(CustomDimensionWorldProvider worldProvider, World world, GenerationStagePipeline pipeline){
+		this.pipeline = pipeline;
+		this.world = world;
+		this.pipeline.setSeed_DimIdAndWorld(worldProvider.getSeed(), worldProvider.getDimension(), world);
+	}
+	
 	@Override
-	public Chunk generateChunk(int x, int z) {
-		// TODO Auto-generated method stub
-		return null;
+	public Chunk generateChunk(int chunkX, int chunkZ) {
+		return pipeline.runPipeLine(chunkX, chunkZ);
 	}
 	
 	@Override
@@ -31,13 +41,11 @@ public class CustomDimensionChunkGenerator implements IChunkGenerator {
 	
 	@Override
 	public List<SpawnListEntry> getPossibleCreatures(EnumCreatureType creatureType, BlockPos pos) {
-		// TODO Auto-generated method stub
-		return null;
+		return world.getBiome(pos).getSpawnableList(creatureType);
 	}
 	
 	@Override
-	public BlockPos getNearestStructurePos(World worldIn, String structureName, BlockPos position,
-			boolean findUnexplored) {
+	public BlockPos getNearestStructurePos(World worldIn, String structureName, BlockPos position, boolean findUnexplored) {
 		// TODO Auto-generated method stub
 		return null;
 	}

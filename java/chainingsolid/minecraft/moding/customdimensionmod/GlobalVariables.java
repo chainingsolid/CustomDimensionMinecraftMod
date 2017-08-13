@@ -6,7 +6,6 @@ public class GlobalVariables {
 	public final static String MOD_VERSION = "0.0.1";
 	
 	
-	
 }
 
 
